@@ -27,18 +27,18 @@ require(["esri/config",
    });
 
    let basemapGallery = new BasemapGallery({
-       view: view
+       view: view,
+       container: "basemapGalleryDiv"
      });
      // Add widget to the top right corner of the view
-     view.ui.add(basemapGallery, {
-       position: "bottom-right"
-     });
+     
 
      let legend = new Legend({
-       view: view
+       view: view,
+       container: "legendDiv"
      });
      
-     view.ui.add(legend, "bottom-left");
+     
 
      const communes = new FeatureLayer({
         outfield: ["*"],
@@ -109,4 +109,30 @@ tooltipField: ""
    }});
 
    map.addMany([communes, quartier, bidonVille,voirie,population]);
+
+
+   view.when(() => {
+    document.getElementById("toggleBasemap").addEventListener("click", function() {
+        togglePanel("basemapPanel");
+    });
+
+    document.getElementById("toggleLegend").addEventListener("click", function() {
+        togglePanel("legendPanel");
+    });
+
+    function togglePanel(panelId) {
+        let panel = document.getElementById(panelId);
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            document.getElementById("basemapPanel").style.display = "none";
+            document.getElementById("legendPanel").style.display = "none";
+            panel.style.display = "block";
+        }
+    }
+});
    });
+
+
+
+  

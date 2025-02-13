@@ -6,3 +6,50 @@ body,
     margin: 0;
     padding: 0;
 }
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+    width: 50px;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    
+}
+
+.sidebar button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Panel for Widgets */
+.panel {
+    position: fixed;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%);
+    width: 250px;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+    max-height: 300px; /* Limit height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}

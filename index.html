@@ -13,6 +13,34 @@
 <body>
     
     <div id="ViewDiv"></div>
+
+    <div class="sidebar">
+        <button id="toggleBasemap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6l9-4 9 4-9 4-9-4v8"></path>
+                <path d="M3 10l9 4 9-4"></path>
+                <path d="M3 14l9 4 9-4v-8"></path>
+            </svg>
+        </button>
+    
+        <button id="toggleLegend">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M7 7h10M7 12h10M7 17h10"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Panels for Basemap Gallery & Legend -->
+    <div id="basemapPanel" class="panel">
+        <h3>Basemap Gallery</h3>
+        <div id="basemapGalleryDiv"></div>
+    </div>
+
+    <div id="legendPanel" class="panel">
+        <h3>Legend</h3>
+        <div id="legendDiv"></div>
+    </div>
         
 
 </body>
