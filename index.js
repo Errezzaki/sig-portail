@@ -48,7 +48,7 @@ require(["esri/config",
               type: "simple",
               symbol: {
                 type: "simple-fill",
-                color: [ 227, 0, 255, 0.5],
+                color: [ 255, 255, 122, 0.5],
                 outline: {
                      color: [ 255, 255, 255],
                      width: 1
@@ -64,10 +64,19 @@ require(["esri/config",
      let quartier = new FeatureLayer({
        url: "https://services5.arcgis.com/COXG5Pot3CiQGdXo/arcgis/rest/services/Quartier/FeatureServer",
        // Popup template
+       renderer :{
+              type: "simple",
+              symbol: {
+                type: "simple-fill",
+                color: [ 0, 255, 255, 0.5],
+                outline: {
+                     color: [ 255, 255, 255],
+                     width: 1}
+       },
        popupTemplate: {
        title: "Quartier: {NOM}",
        
-   }});
+   }}});
 
      let bidonVille = new FeatureLayer({
        url: "https://services5.arcgis.com/COXG5Pot3CiQGdXo/arcgis/rest/services/Bidonvilles/FeatureServer",});  
@@ -81,7 +90,23 @@ require(["esri/config",
    }});
 
    let population = new FeatureLayer({
-       url: "https://services5.arcgis.com/COXG5Pot3CiQGdXo/arcgis/rest/services/casa_population1/FeatureServer",});
+       url: "https://services5.arcgis.com/COXG5Pot3CiQGdXo/arcgis/rest/services/casa_population1/FeatureServer",
+       // Popup template 
+       popupTemplate: {
+        title: "<b>Population de : {ARRONDISSE}</b>",
+        content: [{
+        type: "media",
+        mediaInfos: [{
+        type: "column-chart",
+        caption: "Statistiques de Casablanca",
+value: {
+fields: [ "TOTAL1994","TOTAL2004" ],
+normalizeField: null,
+tooltipField: ""
+}
+}]
+}]
+   }});
 
    map.addMany([communes, quartier, bidonVille,voirie,population]);
    });
