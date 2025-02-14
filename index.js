@@ -131,6 +131,9 @@ tooltipField: ""
             panel.style.display = "block";
         }
     }
+    window.closePanel = function(panelId) {
+      document.getElementById(panelId).style.display = "none";
+  }
 });
    });
 

@@ -30,18 +30,27 @@
             </svg>
         </button>
     </div>
-
+    
     <!-- Panels for Basemap Gallery & Legend -->
     <div id="basemapPanel" class="panel">
-        <h3>Basemap Gallery</h3>
-        <div id="basemapGalleryDiv"></div>
+        <div class="panel-header">
+            <h3>Basemap Gallery</h3>
+            <button class="close-btn" onclick="closePanel('basemapPanel')">X</button>
+        </div>
+        <div class="panel-content">
+            <div id="basemapGalleryDiv"></div>
+        </div>
     </div>
 
     <div id="legendPanel" class="panel">
-        <h3>Legend</h3>
-        <div id="legendDiv"></div>
+        <div class="panel-header">
+            <h3>Legend</h3>
+            <button class="close-btn" onclick="closePanel('legendPanel')">X</button>
+        </div>
+        <div class="panel-content">
+            <div id="legendDiv"></div>
+        </div>
     </div>
-        
 
 </body>
 </html>
