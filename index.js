@@ -19,12 +19,13 @@ require(["esri/config",
        map: map,
        center: [-7.62, 33.59], // Longitude, latitude
        zoom: 13, // Zoom level
-       container: "ViewDiv" // Div element
+       container: "ViewDiv", // Div element
       // Basemap layer service
-      
-   
+
    
    });
+
+   view.ui.remove("zoom");
 
    let basemapGallery = new BasemapGallery({
        view: view,
