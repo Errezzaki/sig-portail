@@ -134,6 +134,23 @@ tooltipField: ""
     window.closePanel = function(panelId) {
       document.getElementById(panelId).style.display = "none";
   }
+
+
+  document.getElementById("toggleLayers").addEventListener("click", function() {
+    togglePanel("layersPanel");
+});
+
+function togglePanel(panelId) {
+    let panel = document.getElementById(panelId);
+    if (panel.style.display === "block") {
+        panel.style.display = "none";
+    } else {
+        document.getElementById("basemapPanel").style.display = "none";
+        document.getElementById("legendPanel").style.display = "none";
+        document.getElementById("layersPanel").style.display = "none";
+        panel.style.display = "block";
+    }
+}
 });
    });
 

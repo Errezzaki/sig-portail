@@ -29,6 +29,16 @@
                 <path d="M7 7h10M7 12h10M7 17h10"></path>
             </svg>
         </button>
+        <hr style="width:50%;">
+        <button id="toggleLayers">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+        </button>
+       
+        
     </div>
     
     <!-- Panels for Basemap Gallery & Legend -->
@@ -50,6 +60,20 @@
         <div class="panel-content">
             <div id="legendDiv"></div>
         </div>
+    </div>
+
+        <div id="layersPanel" class="panel">
+            <div class="panel-header">
+                <h3>Layers</h3>
+                <button class="close-btn" onclick="closePanel('layersPanel')">X</button>
+            
+            </div>
+            
+            <div class="panel-content">
+                <input type="checkbox" id="layer1" checked> <label for="layer1">Layer 1</label><br>
+                <input type="checkbox" id="layer2" checked> <label for="layer2">Layer 2</label><br>
+                <input type="checkbox" id="layer3" checked> <label for="layer3">Layer 3</label>
+            </div>
     </div>
 
 </body>
