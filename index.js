@@ -49,7 +49,7 @@ require(["esri/config",
               type: "simple",
               symbol: {
                 type: "simple-fill",
-                color: [ 255, 255, 122, 0.5],
+                color: [ 255, 210, 40, 0.3],
                 outline: {
                      color: [ 255, 255, 255],
                      width: 1
@@ -92,6 +92,18 @@ require(["esri/config",
 
    let population = new FeatureLayer({
        url: "https://services5.arcgis.com/COXG5Pot3CiQGdXo/arcgis/rest/services/casa_population1/FeatureServer",
+       renderer:{
+        type: "simple", // autocasts as new SimpleRenderer()
+        symbol: {
+        type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+        size: 8,
+        color: "yellow",
+        outline: { // autocasts as new SimpleLineSymbol()
+        width: 1,
+        color: "white"
+        }
+        }        
+       },
        // Popup template 
        popupTemplate: {
         title: "<b>Population de : {ARRONDISSE}</b>",
@@ -151,6 +163,30 @@ function togglePanel(panelId) {
         panel.style.display = "block";
     }
 }
+        map.allLayers.forEach(function(layer) {
+            if(layer.title){
+                let divLayer = document.createElement("div");
+                let li = document.createElement("li");
+                let input = document.createElement("input");
+                input.type = "checkbox";
+                input.checked = layer.visible;
+                input.addEventListener("change", function() {
+                    layer.visible = input.checked;
+                });
+                
+                let label = document.createElement("label");
+                label.textContent = layer.title;
+                li.appendChild(label);
+                
+                li.appendChild(input);
+                divLayer.appendChild(li);
+                document.getElementById("layers").appendChild(divLayer);
+            }
+            
+
+           
+        });
+
 });
    });
 

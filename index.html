@@ -45,7 +45,7 @@
     <div id="basemapPanel" class="panel">
         <div class="panel-header">
             <h3>Basemap Gallery</h3>
-            <button class="close-btn" onclick="closePanel('basemapPanel')">X</button>
+            <img src="./assests/close-x-svgrepo-com.svg" alt="" class="close-btn" onclick="closePanel('basemapPanel')">
         </div>
         <div class="panel-content">
             <div id="basemapGalleryDiv"></div>
@@ -55,7 +55,7 @@
     <div id="legendPanel" class="panel">
         <div class="panel-header">
             <h3>Legend</h3>
-            <button class="close-btn" onclick="closePanel('legendPanel')">X</button>
+            <img src="./assests/close-x-svgrepo-com.svg" alt="" class="close-btn" onclick="closePanel('legendPanel')">
         </div>
         <div class="panel-content">
             <div id="legendDiv"></div>
@@ -65,14 +65,13 @@
         <div id="layersPanel" class="panel">
             <div class="panel-header">
                 <h3>Layers</h3>
-                <button class="close-btn" onclick="closePanel('layersPanel')">X</button>
+                <img src="./assests/close-x-svgrepo-com.svg" alt="" class="close-btn" onclick="closePanel('layersPanel')">
             
             </div>
             
-            <div class="panel-content">
-                <input type="checkbox" id="layer1" checked> <label for="layer1">Layer 1</label><br>
-                <input type="checkbox" id="layer2" checked> <label for="layer2">Layer 2</label><br>
-                <input type="checkbox" id="layer3" checked> <label for="layer3">Layer 3</label>
+            <div class="panel-content" id="layers-list">
+             <div id="layers"></div>   
+                
             </div>
     </div>
 
